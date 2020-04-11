@@ -9,7 +9,7 @@
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>kasparas-kralikas-java-ee Maven Webapp</name>
+  <name>kasparas-kralikas-java-ee</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -21,10 +21,17 @@
 
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
+      <groupId>javax</groupId>
+      <artifactId>javaee-web-api</artifactId>
+      <version>8.0.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-web-api</artifactId>
+      <version>8.0.1</version>
+      <classifier>javadoc</classifier>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
 
