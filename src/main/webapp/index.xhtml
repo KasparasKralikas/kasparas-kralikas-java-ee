@@ -7,5 +7,11 @@
 <h:head/>
 <h:body>
     <h2>Hello over-complicated World of Java EE!</h2>
+    <h2>Bugs:</h2>
+    <ul>
+        <ui:repeat value="#{bugs.bugs}" var="bug">
+            <li>#{bug.id} #{bug.title}</li>
+        </ui:repeat>
+    </ul>
 </h:body>
 </html>
