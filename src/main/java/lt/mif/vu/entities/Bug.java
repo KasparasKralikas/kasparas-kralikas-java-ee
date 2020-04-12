@@ -1,19 +1,28 @@
 package lt.mif.vu.entities;
 
+import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.Objects;
 
+@Entity
+@Table(name = "BUG")
 public class Bug implements Serializable {
 
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
+    @Size(max = 50)
+    @Column(name = "TITLE")
     private String title;
 
-    public Bug(int id, String title) {
+    public Bug(Integer id, String title) {
         this.id = id;
         this.title = title;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -25,4 +34,20 @@ public class Bug implements Serializable {
         this.title = title;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        } else if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        } else {
+            Bug bug = (Bug) obj;
+            return Objects.equals(id, bug.id) && Objects.equals(title, bug.title);
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title);
+    }
 }
