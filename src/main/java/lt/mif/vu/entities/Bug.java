@@ -6,6 +6,9 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
+@NamedQueries(value = {
+        @NamedQuery(name = "Bug.findAll", query = "select b from Bug b")
+})
 @Table(name = "BUG")
 public class Bug implements Serializable {
 
@@ -17,9 +20,7 @@ public class Bug implements Serializable {
     @Column(name = "TITLE")
     private String title;
 
-    public Bug(Integer id, String title) {
-        this.id = id;
-        this.title = title;
+    public Bug() {
     }
 
     public Integer getId() {

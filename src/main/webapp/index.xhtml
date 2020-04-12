@@ -13,5 +13,9 @@
             <li>#{bug.id} #{bug.title}</li>
         </ui:repeat>
     </ul>
+    <h:form>
+        <h:inputText value="#{bugs.bugToCreate.title}" required="true" />
+        <h:commandButton value="Create new Bug" action="#{bugs.createBug}" />
+    </h:form>
 </h:body>
 </html>
