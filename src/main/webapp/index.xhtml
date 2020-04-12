@@ -7,15 +7,15 @@
 <h:head/>
 <h:body>
     <h2>Hello over-complicated World of Java EE!</h2>
-    <h2>Bugs:</h2>
+    <h2>Projects:</h2>
     <ul>
-        <ui:repeat value="#{bugs.bugs}" var="bug">
-            <li>#{bug.id} #{bug.title}</li>
+        <ui:repeat value="#{projects.allProjects}" var="project">
+            <li><h:link value="#{projects.name}" outcome="bugs?projectId=#{project.id}" /></li>
         </ui:repeat>
     </ul>
     <h:form>
-        <h:inputText value="#{bugs.bugToCreate.title}" required="true" />
-        <h:commandButton value="Create new Bug" action="#{bugs.createBug}" />
+        <h:inputText value="#{projects.projectToCreate.name}" required="true" />
+        <h:commandButton value="Add new Project" action="#{projects.createProject}" />
     </h:form>
 </h:body>
 </html>

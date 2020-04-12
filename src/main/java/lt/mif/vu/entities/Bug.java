@@ -1,7 +1,10 @@
 package lt.mif.vu.entities;
 
+import lombok.Getter;
+import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import javax.websocket.server.ServerEndpoint;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -10,6 +13,7 @@ import java.util.Objects;
         @NamedQuery(name = "Bug.findAll", query = "select b from Bug b")
 })
 @Table(name = "BUG")
+@Getter @Setter
 public class Bug implements Serializable {
 
     @Id
@@ -20,19 +24,11 @@ public class Bug implements Serializable {
     @Column(name = "TITLE")
     private String title;
 
+    @ManyToOne
+    @JoinColumn(name="PROJECT_ID")
+    private Project project;
+
     public Bug() {
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     @Override

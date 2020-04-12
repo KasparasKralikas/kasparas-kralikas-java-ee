@@ -9,7 +9,7 @@
     <navigation-rule>
         <from-view-id>/index.xhtml</from-view-id>
         <navigation-case>
-            <from-action>#{bugs.createBug}</from-action>
+            <from-action>#{projcets.createProject}</from-action>
             <from-outcome>success</from-outcome>
             <to-view-id>/index.xhtml</to-view-id>
             <redirect/>
