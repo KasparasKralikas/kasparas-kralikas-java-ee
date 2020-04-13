@@ -3,6 +3,7 @@ package lt.mif.vu.entities;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -24,8 +25,8 @@ public class Project {
 
     private String name;
 
-    @OneToMany(mappedBy = "project")
-    private List<Bug> bugs;
+    @OneToMany(mappedBy = "project", fetch = FetchType.EAGER)
+    private List<Bug> bugs = new ArrayList<>();
 
     @Override
     public boolean equals(Object obj) {
