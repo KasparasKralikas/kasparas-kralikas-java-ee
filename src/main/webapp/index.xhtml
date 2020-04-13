@@ -10,7 +10,7 @@
     <h2>Projects:</h2>
     <ul>
         <ui:repeat value="#{projects.allProjects}" var="project">
-            <li><h:link value="#{projects.name}" outcome="bugs?projectId=#{project.id}" /></li>
+            <li><h:link value="#{project.name}" outcome="bugs?projectId=#{project.id}" /></li>
         </ui:repeat>
     </ul>
     <h:form>
