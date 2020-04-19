@@ -17,11 +17,11 @@
         <javaClientGenerator type="XMLMAPPER" targetPackage="vu.lt.mybatis.dao" targetProject="MAVEN" />
 
 
-        <table schema="public" tableName="project">
+        <table schema="PUBLIC" tableName="PROJECT">
             <generatedKey column="id" identity="true" sqlStatement="JDBC" />
             <ignoreColumn column="opt_lock_version" />
         </table>
-        <table schema="public" tableName="bug">
+        <table schema="PUBLIC" tableName="BUG">
             <generatedKey column="id" identity="true" sqlStatement="JDBC" />
             <ignoreColumn column="opt_lock_version" />
         </table>
