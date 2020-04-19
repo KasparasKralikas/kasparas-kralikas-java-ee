@@ -11,7 +11,7 @@
         <environment id="development">
             <transactionManager type="MANAGED"/>
             <dataSource type="JNDI">
-                <property name="data_source" value="openejb:Resource/BugsDataSource"/>
+                <property name="data_source" value="BugsDataSource"/>
             </dataSource>
         </environment>
     </environments>

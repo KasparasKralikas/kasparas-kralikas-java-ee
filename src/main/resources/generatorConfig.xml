@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-    <context id="PlayersDB" targetRuntime="MyBatis3Simple">
+    <context id="BugsDB" targetRuntime="MyBatis3Simple">
         <jdbcConnection driverClass="org.h2.Driver"
                         connectionURL="jdbc:h2:~/h2database/BugsDB;AUTO_SERVER=TRUE"
                         userId="as"
@@ -13,7 +13,7 @@
 
         <javaModelGenerator targetPackage="lt.mif.vu.mybatis.model" targetProject="MAVEN" />
 
-        <sqlMapGenerator targetPackage="lt.mif.vu.usecases.mybatis.xml" targetProject="MAVEN" />
+        <sqlMapGenerator targetPackage="lt.mif.vu.mybatis.xml" targetProject="MAVEN" />
         <javaClientGenerator type="XMLMAPPER" targetPackage="vu.lt.mybatis.dao" targetProject="MAVEN" />
 
 
