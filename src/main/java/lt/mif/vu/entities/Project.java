@@ -9,7 +9,7 @@ import java.util.Objects;
 
 @Entity
 @NamedQueries({
-        @NamedQuery(name = "Team.findAll", query = "select p from Project as p")
+        @NamedQuery(name = "Project.findAll", query = "select p from Project as p")
 })
 @Table(name = "PROJECT")
 @Getter @Setter

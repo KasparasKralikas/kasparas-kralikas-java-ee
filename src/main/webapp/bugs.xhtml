@@ -14,7 +14,7 @@
         </ui:repeat>
     </ul>
     <h:form>
-        <h:inputText a:placeholder="title" value="#{bugsForProject.bugToCreateToCreate.title}" required="true" />
+        <h:inputText a:placeholder="title" value="#{bugsForProject.bugToCreate.title}" required="true" />
         <h:commandButton value="Create Bug in the Project" action="#{bugsForProject.createBug}" >
             <f:param name="projectId" value="#{bugsForProject.project.id}" />
         </h:commandButton>
