@@ -33,7 +33,7 @@ public class ProjectsMyBatis {
     }
 
     @Transactional
-    public String createTeam() {
+    public String createProject() {
         projectMapper.insert(projectToCreate);
         return "/myBatis/projects?faces-redirect=true";
     }

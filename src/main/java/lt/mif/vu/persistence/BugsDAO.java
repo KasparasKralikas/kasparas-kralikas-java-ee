@@ -25,3 +25,4 @@ public class BugsDAO {
         this.em.persist(bug);
     }
 }
+
