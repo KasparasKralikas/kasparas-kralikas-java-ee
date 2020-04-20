@@ -28,6 +28,10 @@ public class Project {
     @OneToMany(mappedBy = "project", fetch = FetchType.EAGER)
     private List<Bug> bugs = new ArrayList<>();
 
+    @ManyToMany
+    @JoinTable(name="PROJECT_USERS")
+    private List<User> users = new ArrayList<>();
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

@@ -20,7 +20,7 @@
     <h2>Users:</h2>
     <ul>
         <ui:repeat value="#{users.allUsers}" var="user">
-            <li>#{user.username}</li>
+            <li>#{user.id} #{user.username}</li>
         </ui:repeat>
     </ul>
     <h:form>

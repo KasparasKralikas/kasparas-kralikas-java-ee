@@ -28,10 +28,6 @@ public class User implements Serializable {
     @Column(name = "USERNAME")
     private String username;
 
-    @ManyToMany
-    @JoinTable(name="USER_PROJECTS")
-    private List<Project> projects = new ArrayList<>();
-
     public User() {
     }
 
