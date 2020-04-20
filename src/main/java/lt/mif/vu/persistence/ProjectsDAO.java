@@ -14,7 +14,7 @@ public class ProjectsDAO {
     private EntityManager em;
 
     public List<Project> loadAll() {
-        return em.createNamedQuery("Team.findAll", Project.class).getResultList();
+        return em.createNamedQuery("Project.findAll", Project.class).getResultList();
     }
 
     public void setEm(EntityManager em) {

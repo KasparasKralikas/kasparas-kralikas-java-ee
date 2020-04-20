@@ -7,18 +7,18 @@
       xmlns:f="http://java.sun.com/jsf/core">
 <h:head/>
 <h:body>
-    <h2>Bugs in "#{bugsForProject.project.name}" project:</h2>
-    <ul>
+    <h2>Bugs in #{bugsForProject.project.name} Project:</h2>
+    <ol>
         <ui:repeat value="#{bugsForProject.project.bugs}" var="bug">
             <li>#{bug.title}</li>
         </ui:repeat>
-    </ul>
+    </ol>
     <h:form>
         <h:inputText a:placeholder="title" value="#{bugsForProject.bugToCreate.title}" required="true" />
-        <h:commandButton value="Create Bug in the Project" action="#{bugsForProject.createBug}" >
+        <h:commandButton value="Create bug for the project" action="#{bugsForProject.createBug}" >
             <f:param name="projectId" value="#{bugsForProject.project.id}" />
         </h:commandButton>
     </h:form>
-    <h:link outcome="index" value="Back to Projects page"/>
+    <h:link outcome="/myBatis/projects" value="Back to projects page"/>
 </h:body>
 </html>
