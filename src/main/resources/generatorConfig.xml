@@ -25,5 +25,15 @@
             <generatedKey column="id" identity="true" sqlStatement="JDBC" />
             <ignoreColumn column="opt_lock_version" />
         </table>
+        <table schema="PUBLIC" tableName="USER">
+            <generatedKey column="id" identity="true" sqlStatement="JDBC" />
+            <ignoreColumn column="opt_lock_version" />
+        </table>
+        <table schema="PUBLIC" tableName="USER">
+        <generatedKey column="id" identity="true" sqlStatement="JDBC" />
+        <ignoreColumn column="opt_lock_version" />
+    </table>
+        <table schema="PUBLIC" tableName="USER_PROJECTS">
+        </table>
     </context>
 </generatorConfiguration>

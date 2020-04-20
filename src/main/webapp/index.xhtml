@@ -17,6 +17,16 @@
         <h:inputText value="#{projects.projectToCreate.name}" required="true" />
         <h:commandButton value="Add new Project" action="#{projects.createProject}" />
     </h:form>
+    <h2>Users:</h2>
+    <ul>
+        <ui:repeat value="#{users.allUsers}" var="user">
+            <li>#{user.username}</li>
+        </ui:repeat>
+    </ul>
+    <h:form>
+        <h:inputText value="#{users.userToCreate.username}" required="true" />
+        <h:commandButton value="Add new User" action="#{users.createUser}" />
+    </h:form>
     <h:link outcome="myBatis/projects" value="MyBatis implementation"/>
 </h:body>
 </html>
