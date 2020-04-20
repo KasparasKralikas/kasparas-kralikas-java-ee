@@ -10,7 +10,7 @@ import java.util.Objects;
 
 @Entity
 @NamedQueries(value = {
-        @NamedQuery(name = "Bug.findAll", query = "select b from Bug b")
+        @NamedQuery(name = "Bug.findAll", query = "select b from Bug as b")
 })
 @Table(name = "BUG")
 @Getter @Setter
