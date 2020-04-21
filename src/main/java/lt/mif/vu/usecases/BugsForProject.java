@@ -43,7 +43,7 @@ public class BugsForProject implements Serializable {
     public String createBug() {
         bugToCreate.setProject(this.project);
         bugsDAO.persist(bugToCreate);
-        return "/bugs.xhtml?faces-redirect=true@projectId=" + this.project.getId();
+        return "/bugs.xhtml?faces-redirect=true&projectId=" + this.project.getId();
     }
 
 }
