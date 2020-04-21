@@ -29,7 +29,7 @@ public class Project {
     private List<Bug> bugs = new ArrayList<>();
 
     @ManyToMany
-    @JoinTable(name="PROJECT_USERS")
+    @JoinTable(name="PROJECT_USER")
     private List<User> users = new ArrayList<>();
 
     @Override
