@@ -10,7 +10,9 @@
     <h2>Bugs in "#{bugsForProject.project.name}" project:</h2>
     <ul>
         <ui:repeat value="#{bugsForProject.project.bugs}" var="bug">
-            <li>#{bug.title}</li>
+            <li>
+                <h:link value="#{bug.title} (severity: #{bug.severity})" outcome="bugDetails?bugId=#{bug.id}"/>
+            </li>
         </ui:repeat>
     </ul>
     <h:form>

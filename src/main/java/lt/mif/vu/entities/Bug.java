@@ -24,9 +24,16 @@ public class Bug implements Serializable {
     @Column(name = "TITLE")
     private String title;
 
+    @Column(name = "SEVERITY")
+    private Integer severity = 0;
+
     @ManyToOne
     @JoinColumn(name="PROJECT_ID")
     private Project project;
+
+    @Version
+    @Column(name = "OPT_LOCK_VERSION")
+    private Integer version;
 
     public Bug() {
     }

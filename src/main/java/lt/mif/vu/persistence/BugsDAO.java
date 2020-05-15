@@ -24,5 +24,13 @@ public class BugsDAO {
     public void persist(Bug bug) {
         this.em.persist(bug);
     }
+
+    public Bug findOne(Integer id){
+        return em.find(Bug.class, id);
+    }
+
+    public Bug update(Bug bug){
+        return em.merge(bug);
+    }
 }
 
