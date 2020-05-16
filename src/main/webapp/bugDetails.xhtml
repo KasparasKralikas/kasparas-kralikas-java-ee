@@ -16,6 +16,12 @@
         </h:commandButton>
         <h:outputText value="Value was already modified by other user. If you want to override it - try again" rendered="#{param['error'] == 'optimistic-lock-exception'}" />
     </h:form>
+    <h:form>
+        <h:outputText value="#{findPossibleDuplicate.duplicateFindingStatus}" />
+        <h:commandButton value="Search for possible duplicate" disabled="#{findPossibleDuplicate.duplicateFindingRunning}" action="#{findPossibleDuplicate.findPossibleDuplicate()}">
+            <f:param name="bugId" value="#{updateBug.bug.id}" />
+        </h:commandButton>
+    </h:form>
     <h:link outcome="index" value="Back to home page"/>
 </h:body>
 </html>
