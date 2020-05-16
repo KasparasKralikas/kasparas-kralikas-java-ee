@@ -39,4 +39,25 @@ public class BugsController {
 
         return Response.ok(bugDto).build();
     }
+
+    @Path("/{id}")
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Transactional
+    public Response update(
+            @PathParam("id") final Integer bugId,
+            BugDto bugData) {
+        try {
+            Bug existingBug = bugsDAO.findOne(bugId);
+            if (existingBug == null) {
+                return Response.status(Response.Status.NOT_FOUND).build();
+            }
+            existingBug.setTitle(bugData.getTitle());
+            existingBug.setSeverity(bugData.getSeverity());
+            bugsDAO.update(existingBug);
+            return Response.ok().build();
+        } catch (OptimisticLockException ole) {
+            return Response.status(Response.Status.CONFLICT).build();
+        }
+    }
 }
