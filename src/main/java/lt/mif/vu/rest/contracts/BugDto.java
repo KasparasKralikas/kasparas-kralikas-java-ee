@@ -10,5 +10,5 @@ public class BugDto {
 
     private Integer Severity;
 
-    private String ProjectName;
+    private Integer ProjectId;
 }
