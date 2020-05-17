@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import lt.mif.vu.entities.Bug;
 import lt.mif.vu.persistence.BugsDAO;
+import lt.mif.vu.interceptors.LoggedInvocation;
 
 import javax.annotation.PostConstruct;
 import javax.faces.context.FacesContext;
@@ -35,6 +36,7 @@ public class UpdateBug implements Serializable {
         this.bug = bugsDAO.findOne(bugId);
     }
 
+    @LoggedInvocation
     @Transactional
     public String updateBugSeverity() {
         try {

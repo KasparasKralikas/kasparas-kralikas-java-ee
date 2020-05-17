@@ -15,6 +15,7 @@ import lt.mif.vu.entities.Project;
 import lt.mif.vu.entities.Bug;
 import lt.mif.vu.persistence.ProjectsDAO;
 import lt.mif.vu.persistence.BugsDAO;
+import lt.mif.vu.interceptors.LoggedInvocation;
 
 @Model
 public class BugsForProject implements Serializable {
@@ -39,6 +40,7 @@ public class BugsForProject implements Serializable {
         this.project = projectsDAO.findOne(projectId);
     }
 
+    @LoggedInvocation
     @Transactional
     public String createBug() {
         bugToCreate.setProject(this.project);
