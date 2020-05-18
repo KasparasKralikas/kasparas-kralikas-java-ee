@@ -8,7 +8,7 @@ import javax.enterprise.inject.Alternative;
 public class BugTitleWithIdProcessor implements BugTitleProcessor {
     @Override
     public void process(Bug bug) {
-        String newTitle = "[ID: " + bug.getId() + "]" + bug.getTitle();
+        String newTitle = "[ID: " + bug.getProject().getId() + "]" + bug.getTitle();
         bug.setTitle(newTitle);
     }
 }
