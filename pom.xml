@@ -72,6 +72,12 @@
       <artifactId>deltaspike-core-impl</artifactId>
       <scope>runtime</scope>
     </dependency>
+    <!-- String Similarity -->
+    <dependency>
+      <groupId>info.debatty</groupId>
+      <artifactId>java-string-similarity</artifactId>
+      <version>2.0.0</version>
+    </dependency>
   </dependencies>
 
   <build>

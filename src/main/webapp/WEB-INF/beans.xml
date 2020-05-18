@@ -13,4 +13,8 @@
     <interceptors>
         <class>lt.mif.vu.interceptors.MethodLogger</class>
     </interceptors>
+
+    <decorators>
+        <class>lt.mif.vu.decorators.SameProjectBugsSimilarityDecorator</class>
+    </decorators>
 </beans>
