@@ -7,9 +7,13 @@ import javax.enterprise.inject.Alternative;
 @Alternative
 public class BugTitleWithProjectProcessor implements BugTitleProcessor {
 
+    protected String getProjectName(Bug bug) {
+        return bug.getProject().getName();
+    }
+
     @Override
     public void process(Bug bug) {
-        String newTitle = "[" + bug.getProject().getName() + "]" + bug.getTitle();
+        String newTitle = "[" + getProjectName(bug) + "]" + bug.getTitle();
         bug.setTitle(newTitle);
     }
 }
