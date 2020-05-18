@@ -16,6 +16,7 @@ import lt.mif.vu.entities.Bug;
 import lt.mif.vu.persistence.ProjectsDAO;
 import lt.mif.vu.persistence.BugsDAO;
 import lt.mif.vu.interceptors.LoggedInvocation;
+import lt.mif.vu.processors.BugTitleProcessor;
 
 @Model
 public class BugsForProject implements Serializable {
@@ -25,6 +26,9 @@ public class BugsForProject implements Serializable {
 
     @Inject
     private BugsDAO bugsDAO;
+
+    @Inject
+    BugTitleProcessor bugTitleProcessor;
 
     @Getter @Setter
     private Project project;
@@ -44,6 +48,7 @@ public class BugsForProject implements Serializable {
     @Transactional
     public String createBug() {
         bugToCreate.setProject(this.project);
+        bugTitleProcessor.process(bugToCreate);
         bugsDAO.persist(bugToCreate);
         return "/bugs.xhtml?faces-redirect=true&projectId=" + this.project.getId();
     }
